@@ -21,3 +21,18 @@ TEST_CASE("Task B"){
     pointQ = {6, 11, 4};
     CHECK(fartherFromOrigin(&pointP, &pointQ) == &pointQ);
 }
+
+TEST_CASE("Task C"){
+    Coord3D pos = {5, 4, 3};
+    Coord3D vel = {4, 2, 1};
+    move(&pos, &vel, 3.0);
+    CHECK(pos.x == 17);
+    CHECK(pos.y == 10);
+    CHECK(pos.z == 6);
+    pos = {11, 21, 1};
+    vel = {-2, 3, 1};
+    move(&pos, &vel, 1.1);
+    CHECK(pos.x == 8.8);
+    CHECK(pos.y == 24.3);
+    CHECK(pos.z == 2.1);
+}
