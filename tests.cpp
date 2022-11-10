@@ -36,3 +36,11 @@ TEST_CASE("Task C"){
     CHECK(pos.y == 24.3);
     CHECK(pos.z == 2.1);
 }
+
+TEST_CASE("Task E"){
+    Coord3D * pos = createCoord3D(10,4,1);
+    CHECK((*pos).x == 10);
+    CHECK((*pos).y == 4);
+    CHECK((*pos).z == 1);
+    deleteCoord3D(pos);
+}

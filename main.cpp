@@ -30,6 +30,13 @@ int main() {
 
   move(&pos, &vel, 2.0); // object pos gets changed
   std::cout << pos.x << " " << pos.y << " " << pos.z << std::endl;
-  
+
+  Coord3D *ppos = createCoord3D(0,0,100);
+  Coord3D *pvel = createCoord3D(1,-5,0.2);
+  move(ppos, pvel, 10.0);
+  std::cout << "Coordinates after 10 seconds: " << (*ppos).x << " " << (*ppos).y << " " << (*ppos).z << std::endl;
+  deleteCoord3D(ppos); // release memory
+  deleteCoord3D(pvel);
+
   return 0;
 }
